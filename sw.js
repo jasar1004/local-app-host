@@ -1,6 +1,6 @@
-const CACHE='local-app-host-shell-v9';
-const LEGACY_CACHES=['local-app-host-shell-v1','local-app-host-shell-v2','local-app-host-shell-v3','local-app-host-shell-v4','local-app-host-shell-v5','local-app-host-shell-v6','local-app-host-shell-v7','local-app-host-shell-v8'];
-const SHELL=['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./icon.svg'];
+const CACHE='local-app-host-shell-v10';
+const LEGACY_CACHES=['local-app-host-shell-v1','local-app-host-shell-v2','local-app-host-shell-v3','local-app-host-shell-v4','local-app-host-shell-v5','local-app-host-shell-v6','local-app-host-shell-v7','local-app-host-shell-v8','local-app-host-shell-v9'];
+const SHELL=['./','./index.html','./styles.css','./app.js?v=10','./manifest.webmanifest','./icon.svg'];
 
 self.addEventListener('install',event=>event.waitUntil(
   caches.open(CACHE)
