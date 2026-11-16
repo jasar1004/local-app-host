@@ -1,5 +1,5 @@
-const CACHE='local-app-host-shell-v2';
-const LEGACY_CACHES=['local-app-host-shell-v1'];
+const CACHE='local-app-host-shell-v3';
+const LEGACY_CACHES=['local-app-host-shell-v1','local-app-host-shell-v2'];
 const SHELL=['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./icon.svg'];
 
 self.addEventListener('install',event=>event.waitUntil(
