@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "local-app-host-notifications",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-16",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "vars": {
+    "ALLOWED_ORIGIN": "https://jasar1004.github.io",
+    "VAPID_SUBJECT": "https://jasar1004.github.io/local-app-host/",
+    "VAPID_PUBLIC_KEY": "REPLACE_WITH_GENERATED_PUBLIC_KEY"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "local-app-host-notifications",
+      "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "triggers": {
+    "crons": ["* * * * *"]
+  }
+}
