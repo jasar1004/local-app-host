@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="A private, on-device home for your HTML applications.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <title>Local App Host</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">LA</div><div><strong>Local App Host</strong><small>Your apps, on your device</small></div></div>
+    <button id="installBtn" class="button ghost" hidden>Install</button>
+  </header>
+  <main id="homeView" class="shell">
+    <section class="intro">
+      <p class="eyebrow">PRIVATE APP LIBRARY</p>
+      <h1>Your little app library.</h1>
+      <p class="muted">Import HTML projects and launch them from one place. Your imported files are saved in this browser on this iPhone.</p>
+      <div class="actions">
+        <button id="importHtmlBtn" class="button primary">＋ Import HTML</button>
+        <button id="importZipBtn" class="button secondary">Import ZIP project</button>
+        <input id="htmlPicker" type="file" accept=".html,.htm,text/html" hidden>
+        <input id="zipPicker" type="file" accept=".zip,application/zip" hidden>
+      </div>
+      <p class="hint">Tip: choose your <code>index.html</code> for a single-file app, or a ZIP containing <code>index.html</code> and its assets.</p>
+    </section>
+
+    <section class="library-head"><div><p class="eyebrow">YOUR LIBRARY</p><h2>Applications <span id="appCount" class="count">0</span></h2></div><button id="refreshBtn" class="icon-button" aria-label="Refresh library" title="Refresh">↻</button></section>
+    <section id="appGrid" class="app-grid"><div class="empty"><div class="empty-icon">▣</div><h3>No apps yet</h3><p>Import an HTML file or ZIP project to get started.</p></div></section>
+
+    <section class="privacy-note"><div class="lock">⌑</div><div><strong>Stored on this iPhone</strong><p>Imported projects are kept in this browser's local storage. They are not uploaded to the hosting site. Keep a backup if you clear Safari website data or remove the app.</p></div></section>
+    <section class="backup-row"><div><h3>Backup your library</h3><p class="muted">Export your apps and restore them later on this device.</p></div><div class="backup-actions"><button id="exportBtn" class="button secondary small">Export backup</button><button id="restoreBtn" class="button ghost small">Restore backup</button><input id="backupPicker" type="file" accept=".json,application/json" hidden></div></section>
+    <footer>Local App Host · Runs in your browser · No account required</footer>
+  </main>
+
+  <main id="runnerView" class="runner" hidden>
+    <div class="runner-bar"><button id="backBtn" class="button ghost">← Library</button><div id="runningName" class="running-name">Application</div><button id="reloadBtn" class="icon-button" aria-label="Reload app">↻</button></div>
+    <iframe id="appFrame" title="Your application" sandbox="allow-scripts allow-forms allow-downloads allow-modals" allow="clipboard-read; clipboard-write"></iframe>
+    <div id="runnerWarning" class="runner-warning" hidden>Some projects need a server, browser storage, or cross-origin features. This host runs static front-end projects in an isolated frame; those features may not work.</div>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "Local App Host",
+  "short_name": "App Host",
+  "description": "A private on-device library for your HTML applications.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#101827",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
