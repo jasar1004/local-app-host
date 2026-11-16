@@ -41,7 +41,7 @@
 
   <main id="runnerView" class="runner" hidden>
     <div class="runner-bar"><button id="backBtn" class="button ghost">← Library</button><div id="runningName" class="running-name">Application</div><button id="reloadBtn" class="icon-button" aria-label="Reload app">↻</button></div>
-    <iframe id="appFrame" title="Your application" sandbox="allow-scripts allow-forms allow-downloads allow-modals" allow="clipboard-read; clipboard-write"></iframe>
+    <iframe id="appFrame" title="Your application" sandbox="allow-same-origin allow-scripts allow-forms allow-downloads allow-modals" allow="clipboard-read; clipboard-write"></iframe>
     <div id="runnerWarning" class="runner-warning" hidden>Each app has its own saved localStorage. Apps that require a server, IndexedDB, service workers, or special cross-origin features may still need changes.</div>
   </main>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
