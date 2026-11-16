@@ -16,7 +16,7 @@ A small installable web app for keeping and launching static HTML projects on an
 
 This is a static front-end runner, not a general-purpose web server. It cannot run Python, Node, PHP, databases, or other backend services. Apps that depend on a local server, service workers, server-side routes, browser storage tied to their own origin, advanced module loading, or special cross-origin behavior may not work. Local HTML/CSS/JS and ordinary relative image/style/script assets are the intended use case. External network resources still need an internet connection.
 
-Projects run in a sandboxed iframe. This is intentional: imported JavaScript is isolated from the library's own IndexedDB. The iframe is not granted the same-origin permission, so an imported app should not expect its own `localStorage` or IndexedDB to work. Use app-specific in-memory state or build persistence into a compatible single-page app if needed.
+Projects run in a sandboxed iframe. Local App Host provides each app with a `localStorage`-compatible bridge and saves that app's values in the host's IndexedDB. This supports apps that use ordinary `localStorage` for persistence, such as Lightly. The bridge does not provide app-owned IndexedDB, service workers, or server-side features.
 
 The browser may remove local site data if the user clears Safari website data, storage pressure occurs, or the PWA is removed. Export backups regularly. Keep backups somewhere safe; restoring a backup imports copies of the apps and can create duplicates.
 
